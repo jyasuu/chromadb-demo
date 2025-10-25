@@ -1,0 +1,44 @@
+[package]
+name = "chromadb-demo"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+tokio = { version = "1.35", features = ["full"] }
+reqwest = { version = "0.11", features = ["json", "rustls-tls"], default-features = false }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "1.6", features = ["v4", "serde"] }
+dotenv = "0.15"
+anyhow = "1.0"
+thiserror = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+futures = "0.3"
+url = "2.4"
+chromadb = "2.3.0"
+chrono = { version = "0.4", features = ["serde"] }
+
+[[bin]]
+name = "chroma_client"
+path = "src/main.rs"
+
+[[example]]
+name = "advanced_usage"
+path = "examples/advanced_usage.rs"
+
+[[example]]
+name = "simple_demo"
+path = "examples/simple_demo.rs"
+
+[[example]]
+name = "official_chromadb"
+path = "examples/official_chromadb.rs"
+
+[[example]]
+name = "working_with_official"
+path = "examples/working_with_official.rs"
+
+[[example]]
+name = "production_ready"
+path = "examples/production_ready.rs"
